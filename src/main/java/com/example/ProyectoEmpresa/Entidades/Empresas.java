@@ -19,10 +19,10 @@ public class Empresas {
     @Column(name = "documento_empresa", nullable = false, unique = true)
     private String documentoEmpresa;
 
-    @Column(name = "teléfono_empresa", nullable = false)
+    @Column(name = "telefono_empresa", nullable = false)
     private String telefonoEmpresa;
 
-    @Column(name = "dirección_empresa", nullable = false)
+    @Column(name = "direccion_empresa", nullable = false)
     private String direccionEmpresa;
 
     private List<Empleados>empleados;
