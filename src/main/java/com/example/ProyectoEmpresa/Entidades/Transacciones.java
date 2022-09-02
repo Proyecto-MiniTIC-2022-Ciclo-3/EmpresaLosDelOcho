@@ -1,12 +1,11 @@
 package com.example.ProyectoEmpresa.Entidades;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+@Entity
+@Table(name="Transacciones")
 public class Transacciones {
 
     @Id
