@@ -16,15 +16,15 @@ public class Employee {
     private String email;
 
     //@Column(name = "Profile")
-    //@OneToMany
-    //private List<Profile> profile;
+    @OneToMany
+    private List<Perfiles> perfil;
 
     //@Column(name = "Enterprise")
-    //@ManyToOne
-    //private Enterprise enterprise;
+    @ManyToOne
+    private Empresas empresa;
 
-    //@OneToMany(mappedBy = "Employee", cascade = CascadeType.ALL)
-    //private List<Transaction>transactions;
+    @OneToMany(mappedBy = "Employee", cascade = CascadeType.ALL)
+    private List<Transacciones>transaccion;
 
     @Column(name = "UpdateAt")
     private Date UpdateAt;
