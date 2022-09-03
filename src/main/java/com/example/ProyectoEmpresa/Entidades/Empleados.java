@@ -23,6 +23,7 @@ public class Empleados {
     @Column(name = "empresas_empleados", nullable = false)
     private Empresas empresasEmpleados;
 
+    @OneToMany(mappedBy = "Empleados", cascade = CascadeType.ALL)
     private List<Transacciones>transacciones;
 
     @Column(name = "fecha_creacion_Empleados", nullable = false)
