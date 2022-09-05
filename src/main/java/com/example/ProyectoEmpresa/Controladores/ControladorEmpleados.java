@@ -37,11 +37,4 @@ public class ControladorEmpleados {
     public void eliminar(@RequestBody Empleados emple){
         sie.eliminarEmpleados(emple.getIdEmpleados());
     }
-
-
-
-
-
-
-
 }
