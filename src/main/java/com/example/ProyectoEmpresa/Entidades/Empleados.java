@@ -16,14 +16,17 @@ public class Empleados {
     @Column(name = "correo_empleado", nullable = false, unique = true)
     private String email;
 
+
     private Perfiles perfiles;
 
     private NombresRoles nombresRoles;
 
-    @Column(name = "empresas_empleados", nullable = false)
-    private Empresas empresasEmpleados;
+    //@Column(name = "empresas_empleados", nullable = false)
+    @ManyToOne
+    @JoinColumn(name="nit_empresa", insertable = false)
+    Empresas empresasEmpleados;
 
-    @OneToMany(mappedBy = "Empleados", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "empleados", cascade = CascadeType.ALL)
     private List<Transacciones>transacciones;
 
     @Column(name = "fecha_creacion_Empleados", nullable = false)
