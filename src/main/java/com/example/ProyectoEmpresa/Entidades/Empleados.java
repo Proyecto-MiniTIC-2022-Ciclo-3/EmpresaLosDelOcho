@@ -45,7 +45,6 @@ public class Empleados {
         this.fechaCreacionEmpleados = fechaCreacionEmpleados;
         this.fechaActualizacionEmpleados = fechaActualizacionEmpleados;
     }
-
     public Empleados() {
     }
 
