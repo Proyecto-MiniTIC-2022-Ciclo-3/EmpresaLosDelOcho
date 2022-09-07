@@ -1,4 +1,4 @@
 package com.example.ProyectoEmpresa.Servicios;
 
-public class ServicioImpUsuario {
+public class ServicioImpEmpleados {
 }
