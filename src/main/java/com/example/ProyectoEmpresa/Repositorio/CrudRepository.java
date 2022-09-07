@@ -1,4 +1,4 @@
-package com.example.ProyectoEmpresa.Repositorio;
+package com.example.ProyectoEmpresa.repositorio;
 
 public interface CrudRepository {
 }

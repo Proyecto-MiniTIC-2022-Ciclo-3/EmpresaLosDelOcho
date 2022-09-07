@@ -5,8 +5,14 @@ import com.example.ProyectoEmpresa.Entidades.Empresas;
 import java.util.List;
 
 public interface ServicioEmpresas {
-//    List<Empresas>listarEmpresas();
-//    Empresas guardarEmpresas (Empresas empresa);
-//    Empresas consultaEmpresasPorNit
+    public List<Empresas>listarEmpresas();
+    public Empresas guardarEmpresas(Empresas empresas);
+    public Empresas consultarEmpresasPorNit(Long nit);
+    public Empresas actualizarEmpresas(Empresas empresas);
+    public void eliminarEmpresas(Long nit);
+
+
+
+
 
 }
