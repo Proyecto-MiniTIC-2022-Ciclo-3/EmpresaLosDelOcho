@@ -1,4 +1,4 @@
 package com.example.ProyectoEmpresa.Controladores;
 
-public class ControladorUsuario {
+public class ControladorEmpleados {
 }
