@@ -25,8 +25,10 @@ public class Empresas {
     @Column(name = "direccion_empresa", nullable = false)
     private String direccionEmpresa;
 
+    @OneToMany
     private List<Empleados>empleados;
 
+    @OneToMany
     private List<Transacciones>transacciones;
 
     @Column(name = "fecha_creacion", nullable = false)
