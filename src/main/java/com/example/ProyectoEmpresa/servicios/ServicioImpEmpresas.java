@@ -1,6 +1,6 @@
-package com.example.ProyectoEmpresa.Servicios;
+package com.example.ProyectoEmpresa.servicios;
 
-import com.example.ProyectoEmpresa.Entidades.Empresas;
+import com.example.ProyectoEmpresa.entidades.Empresas;
 import com.example.ProyectoEmpresa.repositorio.RepositorioEmpresas;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -34,6 +34,6 @@ public class ServicioImpEmpresas implements ServicioEmpresas {
     public void eliminarEmpresas(Long nit) {
         repositorioEmpresas.deleteById(nit);
 
-        //
+        //asd
     }
 }

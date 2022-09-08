@@ -1,6 +1,6 @@
-package com.example.ProyectoEmpresa.Servicios;
+package com.example.ProyectoEmpresa.servicios;
 
-import com.example.ProyectoEmpresa.Entidades.Empresas;
+import com.example.ProyectoEmpresa.entidades.Empresas;
 
 import java.util.List;
 

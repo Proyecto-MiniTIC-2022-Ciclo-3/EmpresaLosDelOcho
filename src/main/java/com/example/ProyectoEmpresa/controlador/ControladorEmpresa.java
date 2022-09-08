@@ -1,4 +1,4 @@
-package com.example.ProyectoEmpresa.Controladores;
+package com.example.ProyectoEmpresa.controlador;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

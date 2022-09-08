@@ -1,4 +1,4 @@
-package com.example.ProyectoEmpresa.Entidades;
+package com.example.ProyectoEmpresa.entidades;
 
 import javax.persistence.*;
 import java.util.Date;
