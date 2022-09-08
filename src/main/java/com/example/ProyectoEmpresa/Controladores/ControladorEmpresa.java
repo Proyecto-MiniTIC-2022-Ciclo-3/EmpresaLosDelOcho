@@ -55,5 +55,4 @@ public class ControladorEmpresa {
     public Empresas actualizarPorId(@PathVariable("id")Long id, @RequestBody Map<Object,Object> objectMap){
         return sie.actualizarPorId(id,objectMap);
     }
-
 }
