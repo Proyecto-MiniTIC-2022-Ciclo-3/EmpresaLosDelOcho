@@ -25,8 +25,10 @@ public class Empresas {
     @Column(name = "direccion_empresa", nullable = false)
     private String direccionEmpresa;
 
+    @OneToMany(mappedBy ="empresasEmpleados",cascade = CascadeType.ALL)
     private List<Empleados>empleados;
 
+    @OneToMany(mappedBy ="empresas",cascade = CascadeType.ALL)
     private List<Transacciones>transacciones;
 
     @Column(name = "fecha_creacion", nullable = false)

@@ -4,26 +4,31 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.*;
+import java.util.Date;
+import java.util.List;
+
 @Entity
 @Table(name = "Empleados")
 public class Empleados {
 
-    @Id  
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_empleados", nullable = false)
     private long idEmpleados;
 
+    @Column(name = "nombres_empleado", nullable = false)
+    private String nombres;
+
+    @Column(name = "apellidos_empleado", nullable = false)
+    private String apellidos;
+
     @Column(name = "correo_empleado", nullable = false, unique = true)
     private String email;
 
-
-    private Perfiles perfiles;
-
-    private NombresRoles nombresRoles;
-
     //@Column(name = "empresas_empleados", nullable = false)
     @ManyToOne
-    @JoinColumn(name="nit_empresa", insertable = false)
+    @JoinColumn(name="nit_empresa", insertable = false,updatable = false)
     Empresas empresasEmpleados;
 
     @OneToMany(mappedBy = "empleados", cascade = CascadeType.ALL)
@@ -35,16 +40,17 @@ public class Empleados {
     @Column(name = "fecha_actualizacion_Empleados", nullable = false)
     private Date fechaActualizacionEmpleados;
 
-    public Empleados(long idEmpleados, String email, Perfiles perfiles, NombresRoles nombresRoles, Empresas empresasEmpleados, List<Transacciones> transacciones, Date fechaCreacionEmpleados, Date fechaActualizacionEmpleados) {
+    public Empleados(long idEmpleados, String nombres, String apellidos, String email, Empresas empresasEmpleados, List<Transacciones> transacciones, Date fechaCreacionEmpleados, Date fechaActualizacionEmpleados) {
         this.idEmpleados = idEmpleados;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
         this.email = email;
-        this.perfiles = perfiles;
-        this.nombresRoles = nombresRoles;
         this.empresasEmpleados = empresasEmpleados;
         this.transacciones = transacciones;
         this.fechaCreacionEmpleados = fechaCreacionEmpleados;
         this.fechaActualizacionEmpleados = fechaActualizacionEmpleados;
     }
+
     public Empleados() {
     }
 
@@ -64,21 +70,6 @@ public class Empleados {
         this.email = email;
     }
 
-    public Perfiles getPerfiles() {
-        return perfiles;
-    }
-
-    public void setPerfiles(Perfiles perfiles) {
-        this.perfiles = perfiles;
-    }
-
-    public NombresRoles getNombresRoles() {
-        return nombresRoles;
-    }
-
-    public void setNombresRoles(NombresRoles nombresRoles) {
-        this.nombresRoles = nombresRoles;
-    }
 
     public Empresas getEmpresasEmpleados() {
         return empresasEmpleados;
@@ -110,5 +101,21 @@ public class Empleados {
 
     public void setFechaActualizacionEmpleados(Date fechaActualizacionEmpleados) {
         this.fechaActualizacionEmpleados = fechaActualizacionEmpleados;
+    }
+
+    public String getNombres() {
+        return nombres;
+    }
+
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
     }
 }
