@@ -3,6 +3,7 @@ package com.example.ProyectoEmpresa.Servicios;
 import com.example.ProyectoEmpresa.Entidades.Empleados;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ServicioEmpleados {
 
@@ -10,7 +11,8 @@ public interface ServicioEmpleados {
     public Empleados guardarEmpleados(Empleados empleados);
     public Empleados consultarEmpleadosPorID(Long idEmpleados);
     public Empleados actualizarEmpleados(Empleados empleados);
-    public void eliminarEmpleados(Long idEmpleados);
+    public void eliminarEmpleadosPorId(Long idEmpleados);
+    public Empleados actualizarPorId(Long idEmplea, Map<Object,Object> objectMap);
 
 
 

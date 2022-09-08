@@ -4,8 +4,11 @@ import com.example.ProyectoEmpresa.Entidades.Empleados;
 import com.example.ProyectoEmpresa.Repositorio.RepositorioEmpleado;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ReflectionUtils;
 
+import java.lang.reflect.Field;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class ServicioImpEmpleados implements ServicioEmpleados {
@@ -35,9 +38,19 @@ public class ServicioImpEmpleados implements ServicioEmpleados {
     }
 
     @Override
-    public void eliminarEmpleados(Long idEmpleados) {
+    public void eliminarEmpleadosPorId(Long idEmpleados) {
         repositorioEmpleado.deleteById(idEmpleados);
 
+    }
+    @Override
+    public Empleados actualizarPorId(Long idEmplea, Map<Object, Object> objectMap) {
+        Empleados emple=repositorioEmpleado.findById(idEmplea).get();
+        objectMap.forEach((key, value)->{
+            Field field= ReflectionUtils.findField(Empleados.class,(String) key);
+            field.setAccessible(true);
+            ReflectionUtils.setField(field,emple,value);
+        });
+        return repositorioEmpleado.save(emple);
     }
 
 
