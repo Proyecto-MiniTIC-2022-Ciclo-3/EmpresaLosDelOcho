@@ -3,25 +3,26 @@ package com.example.ProyectoEmpresa.Entidades;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity
-@Table(name = "Perfiles")
+//@Entity
+//@Table(name = "Perfiles")
 public class Perfiles {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_perfiles", nullable = false) //Pendiente definir si debe manejarse como una tabla
+    //@Id
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    //@Column(name = "id_perfiles", nullable = false) //Pendiente definir si debe manejarse como una tabla
     private long idPerfiles;
 
     private String imagen;
 
-    @Column(name = "telefono_perfil", nullable = false)
+    //@Column(name = "telefono_perfil", nullable = false)
     private String telefonoPerfil;
 
+    //@Column(name = "empleados", nullable = false)
     private Empleados empleados;
 
-    @Column(name = "fecha_creacion_perfil", nullable = false)
+    //@Column(name = "fecha_creacion_perfil", nullable = false)
     private Date fechaCreacionPerfil;
 
-    @Column(name = "fecha_actualizacion_perfil", nullable = false)
+    //@Column(name = "fecha_actualizacion_perfil", nullable = false)
     private Date fechaActualizacionPerfil;
 
     public Perfiles(long idPerfiles, String imagen, String telefonoPerfil, Empleados empleados, Date fechaCreacionPerfil, Date fechaActualizacionPerfil) {
