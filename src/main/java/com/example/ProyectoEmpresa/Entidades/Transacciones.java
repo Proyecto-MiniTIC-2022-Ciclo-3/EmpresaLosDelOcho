@@ -19,9 +19,9 @@ public class Transacciones {
     @Column(name = "monto_transaccion", nullable = false)
     private float montoTransaccion;
 
-    private List<Empleados>empleados;
+    private Empleados empleados;
 
-    private List<Empresas>empresas;
+    private Empresas empresas;
 
     @Column(name = "fecha_creacion_transaccion", nullable = false)
     private Date fechaCreacionTransaccion;
@@ -29,7 +29,7 @@ public class Transacciones {
     @Column(name = "fecha_actualizacion_transaccion", nullable = false)
     private Date fechaActualizacionTransaccion;
 
-    public Transacciones(long idTransaccion, String coneptoTransaccion, float montoTransaccion, List<Empleados> empleados, List<Empresas> empresas, Date fechaCreacionTransaccion, Date fechaActualizacionTransaccion) {
+    public Transacciones(long idTransaccion, String coneptoTransaccion, float montoTransaccion, Empleados empleados, Empresas empresas, Date fechaCreacionTransaccion, Date fechaActualizacionTransaccion) {
         this.idTransaccion = idTransaccion;
         this.coneptoTransaccion = coneptoTransaccion;
         this.montoTransaccion = montoTransaccion;
@@ -66,19 +66,19 @@ public class Transacciones {
         this.montoTransaccion = montoTransaccion;
     }
 
-    public List<Empleados> getEmpleados() {
+    public Empleados getEmpleados() {
         return empleados;
     }
 
-    public void setEmpleados(List<Empleados> empleados) {
+    public void setEmpleados(Empleados empleados) {
         this.empleados = empleados;
     }
 
-    public List<Empresas> getEmpresas() {
+    public Empresas getEmpresas() {
         return empresas;
     }
 
-    public void setEmpresas(List<Empresas> empresas) {
+    public void setEmpresas(Empresas empresas) {
         this.empresas = empresas;
     }
 
