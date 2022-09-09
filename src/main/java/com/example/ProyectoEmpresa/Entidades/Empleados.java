@@ -1,6 +1,7 @@
 package com.example.ProyectoEmpresa.Entidades;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -30,13 +31,15 @@ public class Empleados {
     @OneToMany(mappedBy = "empleados", cascade = CascadeType.ALL)
     private List<Transacciones>transacciones;
 
+    @Temporal(TemporalType.DATE)
     @Column(name = "fecha_creacion_Empleados", nullable = false)
-    private Date fechaCreacionEmpleados;
+    private LocalDateTime fechaCreacionEmpleados;
 
+    @Temporal(TemporalType.DATE)
     @Column(name = "fecha_actualizacion_Empleados", nullable = false)
-    private Date fechaActualizacionEmpleados;
+    private LocalDateTime fechaActualizacionEmpleados;
 
-    public Empleados(long idEmpleados, String nombres, String apellidos, String correo, Empresas empresasEmpleados, List<Transacciones> transacciones, Date fechaCreacionEmpleados, Date fechaActualizacionEmpleados) {
+    public Empleados(long idEmpleados, String nombres, String apellidos, String correo, Empresas empresasEmpleados, List<Transacciones> transacciones, LocalDateTime fechaCreacionEmpleados, LocalDateTime fechaActualizacionEmpleados) {
         this.idEmpleados = idEmpleados;
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -45,9 +48,6 @@ public class Empleados {
         this.transacciones = transacciones;
         this.fechaCreacionEmpleados = fechaCreacionEmpleados;
         this.fechaActualizacionEmpleados = fechaActualizacionEmpleados;
-    }
-
-    public Empleados() {
     }
 
     public long getIdEmpleados() {
@@ -98,19 +98,21 @@ public class Empleados {
         this.transacciones = transacciones;
     }
 
-    public Date getFechaCreacionEmpleados() {
+    public LocalDateTime getFechaCreacionEmpleados() {
         return fechaCreacionEmpleados;
     }
 
-    public void setFechaCreacionEmpleados(Date fechaCreacionEmpleados) {
+    public void setFechaCreacionEmpleados(LocalDateTime fechaCreacionEmpleados) {
         this.fechaCreacionEmpleados = fechaCreacionEmpleados;
     }
 
-    public Date getFechaActualizacionEmpleados() {
+    public LocalDateTime getFechaActualizacionEmpleados() {
         return fechaActualizacionEmpleados;
     }
 
-    public void setFechaActualizacionEmpleados(Date fechaActualizacionEmpleados) {
+    public void setFechaActualizacionEmpleados(LocalDateTime fechaActualizacionEmpleados) {
         this.fechaActualizacionEmpleados = fechaActualizacionEmpleados;
     }
 }
+
+
