@@ -2,7 +2,6 @@ package com.example.ProyectoEmpresa.Entidades;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name="Transacciones")
@@ -19,8 +18,12 @@ public class Transacciones {
     @Column(name = "monto_transaccion", nullable = false)
     private float montoTransaccion;
 
+    @ManyToOne
+    @JoinColumn(name="id_empleados", insertable = false,updatable = false)
     private Empleados empleados;
 
+    @ManyToOne
+    @JoinColumn(name="nit_empresa", insertable = false,updatable = false)
     private Empresas empresas;
 
     @Column(name = "fecha_creacion_transaccion", nullable = false)

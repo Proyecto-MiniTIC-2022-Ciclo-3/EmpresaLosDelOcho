@@ -1,5 +1,5 @@
 package com.example.ProyectoEmpresa.Controladores;
-import com.example.ProyectoEmpresa.Entidades.Empleados;
+
 import com.example.ProyectoEmpresa.Entidades.Empresas;
 import com.example.ProyectoEmpresa.Servicios.ServicioImpEmpresas;
 import org.springframework.beans.factory.annotation.Autowired;

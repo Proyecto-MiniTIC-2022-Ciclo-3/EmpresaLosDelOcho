@@ -4,10 +4,6 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.*;
-import java.util.Date;
-import java.util.List;
-
 @Entity
 @Table(name = "Empleados")
 public class Empleados {
@@ -24,12 +20,12 @@ public class Empleados {
     private String apellidos;
 
     @Column(name = "correo_empleado", nullable = false, unique = true)
-    private String email;
+    private String correo;
 
     //@Column(name = "empresas_empleados", nullable = false)
     @ManyToOne
     @JoinColumn(name="nit_empresa", insertable = false,updatable = false)
-    Empresas empresasEmpleados;
+    private Empresas empresasEmpleados;
 
     @OneToMany(mappedBy = "empleados", cascade = CascadeType.ALL)
     private List<Transacciones>transacciones;
@@ -40,11 +36,11 @@ public class Empleados {
     @Column(name = "fecha_actualizacion_Empleados", nullable = false)
     private Date fechaActualizacionEmpleados;
 
-    public Empleados(long idEmpleados, String nombres, String apellidos, String email, Empresas empresasEmpleados, List<Transacciones> transacciones, Date fechaCreacionEmpleados, Date fechaActualizacionEmpleados) {
+    public Empleados(long idEmpleados, String nombres, String apellidos, String correo, Empresas empresasEmpleados, List<Transacciones> transacciones, Date fechaCreacionEmpleados, Date fechaActualizacionEmpleados) {
         this.idEmpleados = idEmpleados;
         this.nombres = nombres;
         this.apellidos = apellidos;
-        this.email = email;
+        this.correo = correo;
         this.empresasEmpleados = empresasEmpleados;
         this.transacciones = transacciones;
         this.fechaCreacionEmpleados = fechaCreacionEmpleados;
@@ -62,14 +58,29 @@ public class Empleados {
         this.idEmpleados = idEmpleados;
     }
 
-    public String getEmail() {
-        return email;
+    public String getNombres() {
+        return nombres;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
 
     public Empresas getEmpresasEmpleados() {
         return empresasEmpleados;
@@ -101,21 +112,5 @@ public class Empleados {
 
     public void setFechaActualizacionEmpleados(Date fechaActualizacionEmpleados) {
         this.fechaActualizacionEmpleados = fechaActualizacionEmpleados;
-    }
-
-    public String getNombres() {
-        return nombres;
-    }
-
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
-    }
-
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
     }
 }

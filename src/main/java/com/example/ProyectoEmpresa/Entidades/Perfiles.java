@@ -1,6 +1,5 @@
 package com.example.ProyectoEmpresa.Entidades;
 
-import javax.persistence.*;
 import java.util.Date;
 
 //@Entity

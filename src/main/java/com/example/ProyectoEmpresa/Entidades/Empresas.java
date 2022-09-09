@@ -29,7 +29,7 @@ public class Empresas {
     private List<Empleados>empleados;
 
     @OneToMany(mappedBy ="empresas",cascade = CascadeType.ALL)
-    private List<Transacciones>transacciones;
+    List<Transacciones>transacciones;
 
     @Column(name = "fecha_creacion", nullable = false)
     private Date fechaCreacion;

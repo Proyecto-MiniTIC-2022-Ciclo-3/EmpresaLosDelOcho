@@ -1,7 +1,7 @@
 package com.example.ProyectoEmpresa.Controladores;
 
-import com.example.ProyectoEmpresa.Modelo.MovEmpresa;
-import com.example.ProyectoEmpresa.Vista.MovEmpresa;
+//import com.example.ProyectoEmpresa.Modelo.MovEmpresa;
+//import com.example.ProyectoEmpresa.Vista.MovEmpresa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,11 +15,11 @@ import java.util.List;
 @RequestMapping("/api")
 
 public class ControladorMovEmpresa {
-    @Autowired
-    private ControladorMovEmpresa repository;
+    //@Autowired
+    //private ControladorMovEmpresa repository;
 
 
-    @GetMapping("/ControladorMovEmpresa")
+   /*@GetMapping("/ControladorMovEmpresa")
     Public List ControladorMovEmpresa AllMonto() {
         return repository.findAll();
     }
@@ -42,5 +42,5 @@ public class ControladorMovEmpresa {
     @DeleteMapping("/MovEmpresa/{id}")
     public void deleteMovEmpresa(@PathVariable("id") Integer id) {
         repository.deleteById(id);
-    }
+    }*/
 }
