@@ -25,7 +25,6 @@ public class Empresas {
     @Column(name = "fecha_creacion", nullable = false)
     private Date fechaCreacion;
 
-
     @Column(name = "fecha_actualizacion", nullable = false)
     private Date fechaActualizacion;
 

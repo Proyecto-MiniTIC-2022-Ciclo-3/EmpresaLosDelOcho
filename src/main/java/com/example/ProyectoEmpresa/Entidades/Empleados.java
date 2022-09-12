@@ -26,7 +26,7 @@ public class Empleados {
 
     //@Column(name = "empresas_empleados", nullable = false)
     @ManyToOne
-    @JoinColumn(name="nit_empresa", insertable = false,updatable = false)
+    @JoinColumn(name="nit_empresa")
     private Empresas empresasEmpleados;
 
     @Column(name = "fecha_creacion_Empleados", nullable = false)
