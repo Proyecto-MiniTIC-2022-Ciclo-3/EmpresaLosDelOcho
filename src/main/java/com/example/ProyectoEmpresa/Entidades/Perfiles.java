@@ -1,5 +1,6 @@
 package com.example.ProyectoEmpresa.Entidades;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 //@Entity
@@ -19,12 +20,12 @@ public class Perfiles {
     private Empleados empleados;
 
     //@Column(name = "fecha_creacion_perfil", nullable = false)
-    private Date fechaCreacionPerfil;
+    private LocalDateTime fechaCreacionPerfil;
 
     //@Column(name = "fecha_actualizacion_perfil", nullable = false)
-    private Date fechaActualizacionPerfil;
+    private LocalDateTime fechaActualizacionPerfil;
 
-    public Perfiles(long idPerfiles, String imagen, String telefonoPerfil, Empleados empleados, Date fechaCreacionPerfil, Date fechaActualizacionPerfil) {
+    public Perfiles(long idPerfiles, String imagen, String telefonoPerfil, Empleados empleados, LocalDateTime fechaCreacionPerfil, LocalDateTime fechaActualizacionPerfil) {
         this.idPerfiles = idPerfiles;
         this.imagen = imagen;
         this.telefonoPerfil = telefonoPerfil;
@@ -68,19 +69,19 @@ public class Perfiles {
         this.empleados = empleados;
     }
 
-    public Date getFechaCreacionPerfil() {
+    public LocalDateTime getFechaCreacionPerfil() {
         return fechaCreacionPerfil;
     }
 
-    public void setFechaCreacionPerfil(Date fechaCreacionPerfil) {
+    public void setFechaCreacionPerfil(LocalDateTime fechaCreacionPerfil) {
         this.fechaCreacionPerfil = fechaCreacionPerfil;
     }
 
-    public Date getFechaActualizacionPerfil() {
+    public LocalDateTime getFechaActualizacionPerfil() {
         return fechaActualizacionPerfil;
     }
 
-    public void setFechaActualizacionPerfil(Date fechaActualizacionPerfil) {
+    public void setFechaActualizacionPerfil(LocalDateTime fechaActualizacionPerfil) {
         this.fechaActualizacionPerfil = fechaActualizacionPerfil;
     }
 }
