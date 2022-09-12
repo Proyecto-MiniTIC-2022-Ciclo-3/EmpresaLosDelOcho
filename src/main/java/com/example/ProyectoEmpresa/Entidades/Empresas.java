@@ -2,6 +2,7 @@ package com.example.ProyectoEmpresa.Entidades;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -22,12 +23,13 @@ public class Empresas {
     private String direccionEmpresa;
 
     @Column(name = "fecha_creacion", nullable = false)
-    private LocalDateTime fechaCreacion;
+    private Date fechaCreacion;
+
 
     @Column(name = "fecha_actualizacion", nullable = false)
-    private LocalDateTime fechaActualizacion;
+    private Date fechaActualizacion;
 
-    public Empresas(long nitEmpresa, String nombreEmpresa, String telefonoEmpresa, String direccionEmpresa, LocalDateTime fechaCreacion, LocalDateTime fechaActualizacion) {
+    public Empresas(long nitEmpresa, String nombreEmpresa, String telefonoEmpresa, String direccionEmpresa, Date fechaCreacion, Date fechaActualizacion) {
         this.nitEmpresa = nitEmpresa;
         this.nombreEmpresa = nombreEmpresa;
         this.telefonoEmpresa = telefonoEmpresa;
@@ -71,19 +73,19 @@ public class Empresas {
         this.direccionEmpresa = direccionEmpresa;
     }
 
-    public LocalDateTime getFechaCreacion() {
+    public Date getFechaCreacion() {
         return fechaCreacion;
     }
 
-    public void setFechaCreacion(LocalDateTime fechaCreacion) {
+    public void setFechaCreacion(Date fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
 
-    public LocalDateTime getFechaActualizacion() {
+    public Date getFechaActualizacion() {
         return fechaActualizacion;
     }
 
-    public void setFechaActualizacion(LocalDateTime fechaActualizacion) {
+    public void setFechaActualizacion(Date fechaActualizacion) {
         this.fechaActualizacion = fechaActualizacion;
     }
 }

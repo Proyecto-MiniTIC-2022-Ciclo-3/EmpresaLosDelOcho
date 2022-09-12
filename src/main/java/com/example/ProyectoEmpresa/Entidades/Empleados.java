@@ -3,6 +3,7 @@ package com.example.ProyectoEmpresa.Entidades;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -29,12 +30,12 @@ public class Empleados {
     private Empresas empresasEmpleados;
 
     @Column(name = "fecha_creacion_Empleados", nullable = false)
-    private LocalDateTime fechaCreacionEmpleados;
+    private Date fechaCreacionEmpleados;
 
     @Column(name = "fecha_actualizacion_Empleados", nullable = false)
-    private LocalDateTime fechaActualizacionEmpleados;
+    private Date fechaActualizacionEmpleados;
 
-    public Empleados(long idEmpleados, String nombres, String apellidos, String correo, Empresas empresasEmpleados, LocalDateTime fechaCreacionEmpleados, LocalDateTime fechaActualizacionEmpleados) {
+    public Empleados(long idEmpleados, String nombres, String apellidos, String correo, Empresas empresasEmpleados, Date fechaCreacionEmpleados, Date fechaActualizacionEmpleados) {
         this.idEmpleados = idEmpleados;
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -87,19 +88,19 @@ public class Empleados {
         this.empresasEmpleados = empresasEmpleados;
     }
 
-    public LocalDateTime getFechaCreacionEmpleados() {
+    public Date getFechaCreacionEmpleados() {
         return fechaCreacionEmpleados;
     }
 
-    public void setFechaCreacionEmpleados(LocalDateTime fechaCreacionEmpleados) {
+    public void setFechaCreacionEmpleados(Date fechaCreacionEmpleados) {
         this.fechaCreacionEmpleados = fechaCreacionEmpleados;
     }
 
-    public LocalDateTime getFechaActualizacionEmpleados() {
+    public Date getFechaActualizacionEmpleados() {
         return fechaActualizacionEmpleados;
     }
 
-    public void setFechaActualizacionEmpleados(LocalDateTime fechaActualizacionEmpleados) {
+    public void setFechaActualizacionEmpleados(Date fechaActualizacionEmpleados) {
         this.fechaActualizacionEmpleados = fechaActualizacionEmpleados;
     }
 }

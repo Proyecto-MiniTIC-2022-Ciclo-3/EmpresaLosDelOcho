@@ -28,12 +28,12 @@ public class Transacciones {
     private Empresas empresas;
 
     @Column(name = "fecha_creacion_transaccion", nullable = false)
-    private LocalDateTime fechaCreacionTransaccion;
+    private Date fechaCreacionTransaccion;
 
     @Column(name = "fecha_actualizacion_transaccion", nullable = false)
-    private LocalDateTime fechaActualizacionTransaccion;
+    private Date fechaActualizacionTransaccion;
 
-    public Transacciones(long idTransaccion, String coneptoTransaccion, float montoTransaccion, Empleados empleados, Empresas empresas, LocalDateTime fechaCreacionTransaccion, LocalDateTime fechaActualizacionTransaccion) {
+    public Transacciones(long idTransaccion, String coneptoTransaccion, float montoTransaccion, Empleados empleados, Empresas empresas, Date fechaCreacionTransaccion, Date fechaActualizacionTransaccion) {
         this.idTransaccion = idTransaccion;
         this.coneptoTransaccion = coneptoTransaccion;
         this.montoTransaccion = montoTransaccion;
@@ -86,19 +86,19 @@ public class Transacciones {
         this.empresas = empresas;
     }
 
-    public LocalDateTime getFechaCreacionTransaccion() {
+    public Date getFechaCreacionTransaccion() {
         return fechaCreacionTransaccion;
     }
 
-    public void setFechaCreacionTransaccion(LocalDateTime fechaCreacionTransaccion) {
+    public void setFechaCreacionTransaccion(Date fechaCreacionTransaccion) {
         this.fechaCreacionTransaccion = fechaCreacionTransaccion;
     }
 
-    public LocalDateTime getFechaActualizacionTransaccion() {
+    public Date getFechaActualizacionTransaccion() {
         return fechaActualizacionTransaccion;
     }
 
-    public void setFechaActualizacionTransaccion(LocalDateTime fechaActualizacionTransaccion) {
+    public void setFechaActualizacionTransaccion(Date fechaActualizacionTransaccion) {
         this.fechaActualizacionTransaccion = fechaActualizacionTransaccion;
     }
 }
