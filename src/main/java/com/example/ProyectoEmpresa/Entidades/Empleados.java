@@ -1,7 +1,7 @@
 package com.example.ProyectoEmpresa.Entidades;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -24,34 +24,30 @@ public class Empleados {
 
     //@Column(name = "empresas_empleados", nullable = false)
     @ManyToOne
-    @JoinColumn(name="nit_empresa", insertable = false,updatable = false)
+    @JoinColumn(name="nit_empresa")
     private Empresas empresasEmpleados;
 
-    @OneToMany(mappedBy = "empleados", cascade = CascadeType.ALL)
-    private List<Transacciones>transacciones;
-
     @Column(name = "fecha_creacion_Empleados", nullable = false)
-    private Date fechaCreacionEmpleados;
+    private LocalDateTime fechaCreacionEmpleados;
 
     @Column(name = "fecha_actualizacion_Empleados", nullable = false)
-    private Date fechaActualizacionEmpleados;
-
-    public Empleados(long idEmpleados, String nombres, String apellidos, String correo, Empresas empresasEmpleados, List<Transacciones> transacciones, Date fechaCreacionEmpleados, Date fechaActualizacionEmpleados) {
-        this.idEmpleados = idEmpleados;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.correo = correo;
-        this.empresasEmpleados = empresasEmpleados;
-        this.transacciones = transacciones;
-        this.fechaCreacionEmpleados = fechaCreacionEmpleados;
-        this.fechaActualizacionEmpleados = fechaActualizacionEmpleados;
-    }
+    private LocalDateTime fechaActualizacionEmpleados;
 
     public Empleados() {
     }
 
     public long getIdEmpleados() {
         return idEmpleados;
+    }
+
+    public Empleados(long idEmpleados, String nombres, String apellidos, String correo, Empresas empresasEmpleados, LocalDateTime fechaCreacionEmpleados, LocalDateTime fechaActualizacionEmpleados) {
+        this.idEmpleados = idEmpleados;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.correo = correo;
+        this.empresasEmpleados = empresasEmpleados;
+        this.fechaCreacionEmpleados = fechaCreacionEmpleados;
+        this.fechaActualizacionEmpleados = fechaActualizacionEmpleados;
     }
 
     public void setIdEmpleados(long idEmpleados) {
@@ -90,27 +86,19 @@ public class Empleados {
         this.empresasEmpleados = empresasEmpleados;
     }
 
-    public List<Transacciones> getTransacciones() {
-        return transacciones;
-    }
-
-    public void setTransacciones(List<Transacciones> transacciones) {
-        this.transacciones = transacciones;
-    }
-
-    public Date getFechaCreacionEmpleados() {
+    public LocalDateTime getFechaCreacionEmpleados() {
         return fechaCreacionEmpleados;
     }
 
-    public void setFechaCreacionEmpleados(Date fechaCreacionEmpleados) {
+    public void setFechaCreacionEmpleados(LocalDateTime fechaCreacionEmpleados) {
         this.fechaCreacionEmpleados = fechaCreacionEmpleados;
     }
 
-    public Date getFechaActualizacionEmpleados() {
+    public LocalDateTime getFechaActualizacionEmpleados() {
         return fechaActualizacionEmpleados;
     }
 
-    public void setFechaActualizacionEmpleados(Date fechaActualizacionEmpleados) {
+    public void setFechaActualizacionEmpleados(LocalDateTime fechaActualizacionEmpleados) {
         this.fechaActualizacionEmpleados = fechaActualizacionEmpleados;
     }
 }

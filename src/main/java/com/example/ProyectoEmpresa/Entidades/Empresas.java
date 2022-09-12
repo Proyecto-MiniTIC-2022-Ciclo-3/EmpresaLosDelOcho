@@ -1,7 +1,7 @@
 package com.example.ProyectoEmpresa.Entidades;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -9,15 +9,12 @@ import java.util.List;
 public class Empresas {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "nit_empresa", nullable = false)
     private long nitEmpresa;
 
     @Column(name = "nombre_empresa", nullable = false, unique = true)
     private String nombreEmpresa;
-
-    @Column(name = "documento_empresa", nullable = false, unique = true)
-    private String documentoEmpresa;
 
     @Column(name = "telefono_empresa", nullable = false)
     private String telefonoEmpresa;
@@ -25,26 +22,17 @@ public class Empresas {
     @Column(name = "direccion_empresa", nullable = false)
     private String direccionEmpresa;
 
-    @OneToMany(mappedBy ="empresasEmpleados",cascade = CascadeType.ALL)
-    private List<Empleados>empleados;
-
-    @OneToMany(mappedBy ="empresas",cascade = CascadeType.ALL)
-    List<Transacciones>transacciones;
-
     @Column(name = "fecha_creacion", nullable = false)
-    private Date fechaCreacion;
+    private LocalDateTime fechaCreacion;
 
     @Column(name = "fecha_actualizacion", nullable = false)
-    private Date fechaActualizacion;
+    private LocalDateTime fechaActualizacion;
 
-    public Empresas(long nitEmpresa, String nombreEmpresa, String documentoEmpresa, String telefonoEmpresa, String direccionEmpresa, List<Empleados> empleados, List<Transacciones> transacciones, Date fechaCreacion, Date fechaActualizacion) {
+    public Empresas(long nitEmpresa, String nombreEmpresa, String telefonoEmpresa, String direccionEmpresa, LocalDateTime fechaCreacion, LocalDateTime fechaActualizacion) {
         this.nitEmpresa = nitEmpresa;
         this.nombreEmpresa = nombreEmpresa;
-        this.documentoEmpresa = documentoEmpresa;
         this.telefonoEmpresa = telefonoEmpresa;
         this.direccionEmpresa = direccionEmpresa;
-        this.empleados = empleados;
-        this.transacciones = transacciones;
         this.fechaCreacion = fechaCreacion;
         this.fechaActualizacion = fechaActualizacion;
     }
@@ -68,14 +56,6 @@ public class Empresas {
         this.nombreEmpresa = nombreEmpresa;
     }
 
-    public String getDocumentoEmpresa() {
-        return documentoEmpresa;
-    }
-
-    public void setDocumentoEmpresa(String documentoEmpresa) {
-        this.documentoEmpresa = documentoEmpresa;
-    }
-
     public String getTelefonoEmpresa() {
         return telefonoEmpresa;
     }
@@ -92,36 +72,19 @@ public class Empresas {
         this.direccionEmpresa = direccionEmpresa;
     }
 
-    public List<Empleados> getEmpleados() {
-        return empleados;
-    }
-
-    public void setEmpleados(List<Empleados> empleados) {
-        this.empleados = empleados;
-    }
-
-    public List<Transacciones> getTransacciones() {
-        return transacciones;
-    }
-
-    public void setTransacciones(List<Transacciones> transacciones) {
-        this.transacciones = transacciones;
-    }
-
-    public Date getFechaCreacion() {
+    public LocalDateTime getFechaCreacion() {
         return fechaCreacion;
     }
 
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
 
-    public Date getFechaActualizacion() {
+    public LocalDateTime getFechaActualizacion() {
         return fechaActualizacion;
     }
 
-    public void setFechaActualizacion(Date fechaActualizacion) {
+    public void setFechaActualizacion(LocalDateTime fechaActualizacion) {
         this.fechaActualizacion = fechaActualizacion;
     }
-
 }

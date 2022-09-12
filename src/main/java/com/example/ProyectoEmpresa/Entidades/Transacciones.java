@@ -1,6 +1,7 @@
 package com.example.ProyectoEmpresa.Entidades;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -19,20 +20,20 @@ public class Transacciones {
     private float montoTransaccion;
 
     @ManyToOne
-    @JoinColumn(name="id_empleados", insertable = false,updatable = false)
+    @JoinColumn(name="id_empleados")
     private Empleados empleados;
 
     @ManyToOne
-    @JoinColumn(name="nit_empresa", insertable = false,updatable = false)
+    @JoinColumn(name="nit_empresa")
     private Empresas empresas;
 
     @Column(name = "fecha_creacion_transaccion", nullable = false)
-    private Date fechaCreacionTransaccion;
+    private LocalDateTime fechaCreacionTransaccion;
 
     @Column(name = "fecha_actualizacion_transaccion", nullable = false)
-    private Date fechaActualizacionTransaccion;
+    private LocalDateTime fechaActualizacionTransaccion;
 
-    public Transacciones(long idTransaccion, String coneptoTransaccion, float montoTransaccion, Empleados empleados, Empresas empresas, Date fechaCreacionTransaccion, Date fechaActualizacionTransaccion) {
+    public Transacciones(long idTransaccion, String coneptoTransaccion, float montoTransaccion, Empleados empleados, Empresas empresas, LocalDateTime fechaCreacionTransaccion, LocalDateTime fechaActualizacionTransaccion) {
         this.idTransaccion = idTransaccion;
         this.coneptoTransaccion = coneptoTransaccion;
         this.montoTransaccion = montoTransaccion;
@@ -85,19 +86,19 @@ public class Transacciones {
         this.empresas = empresas;
     }
 
-    public Date getFechaCreacionTransaccion() {
+    public LocalDateTime getFechaCreacionTransaccion() {
         return fechaCreacionTransaccion;
     }
 
-    public void setFechaCreacionTransaccion(Date fechaCreacionTransaccion) {
+    public void setFechaCreacionTransaccion(LocalDateTime fechaCreacionTransaccion) {
         this.fechaCreacionTransaccion = fechaCreacionTransaccion;
     }
 
-    public Date getFechaActualizacionTransaccion() {
+    public LocalDateTime getFechaActualizacionTransaccion() {
         return fechaActualizacionTransaccion;
     }
 
-    public void setFechaActualizacionTransaccion(Date fechaActualizacionTransaccion) {
+    public void setFechaActualizacionTransaccion(LocalDateTime fechaActualizacionTransaccion) {
         this.fechaActualizacionTransaccion = fechaActualizacionTransaccion;
     }
 }
