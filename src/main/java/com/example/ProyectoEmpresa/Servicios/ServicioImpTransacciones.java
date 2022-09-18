@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.ReflectionUtils;
 
 import java.lang.reflect.Field;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -58,6 +59,13 @@ public class ServicioImpTransacciones implements ServicioTransacciones{
         });
         return repositorioTransacciones.save(transaccion);
     }
+
+    @Override
+    public List<Transacciones> findbysqlmovimiento(Long idtransaccion) {
+        return repositorioTransacciones.findAllById(Collections.singleton(idtransaccion));
+    }
+
+
 
     /*public Transacciones agregarTransaccion(Long nitEmpresa,Long idEmpleados,Transacciones transacciones){
 

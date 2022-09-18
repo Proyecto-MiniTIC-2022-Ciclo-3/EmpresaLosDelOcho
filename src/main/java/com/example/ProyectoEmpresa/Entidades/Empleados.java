@@ -1,19 +1,17 @@
 package com.example.ProyectoEmpresa.Entidades;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
+import java.time.LocalDate;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name = "Empleados")
 public class Empleados {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_empleados", nullable = false)
-    private long idEmpleados;
+    @Column(name = "id_empleados", nullable = false,unique = true)
+    private long documento;
 
     @Column(name = "nombres_empleado", nullable = false)
     private String nombres;
@@ -30,30 +28,27 @@ public class Empleados {
     private Empresas empresasEmpleados;
 
     @Column(name = "fecha_creacion_Empleados", nullable = false)
-    private Date fechaCreacionEmpleados;
+    private LocalDate fechaCreacionEmpleados;
 
-    @Column(name = "fecha_actualizacion_Empleados", nullable = false)
-    private Date fechaActualizacionEmpleados;
 
-    public Empleados(long idEmpleados, String nombres, String apellidos, String correo, Empresas empresasEmpleados, Date fechaCreacionEmpleados, Date fechaActualizacionEmpleados) {
-        this.idEmpleados = idEmpleados;
+    public Empleados(long documento, String nombres, String apellidos, String correo, Empresas empresasEmpleados, LocalDate fechaCreacionEmpleados) {
+        this.documento = documento;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.correo = correo;
         this.empresasEmpleados = empresasEmpleados;
         this.fechaCreacionEmpleados = fechaCreacionEmpleados;
-        this.fechaActualizacionEmpleados = fechaActualizacionEmpleados;
     }
 
     public Empleados() {
     }
 
-    public long getIdEmpleados() {
-        return idEmpleados;
+    public long getDocumento() {
+        return documento;
     }
 
-    public void setIdEmpleados(long idEmpleados) {
-        this.idEmpleados = idEmpleados;
+    public void setDocumento(long documento) {
+        this.documento = documento;
     }
 
     public String getNombres() {
@@ -88,19 +83,11 @@ public class Empleados {
         this.empresasEmpleados = empresasEmpleados;
     }
 
-    public Date getFechaCreacionEmpleados() {
+    public LocalDate getFechaCreacionEmpleados() {
         return fechaCreacionEmpleados;
     }
 
-    public void setFechaCreacionEmpleados(Date fechaCreacionEmpleados) {
+    public void setFechaCreacionEmpleados(LocalDate fechaCreacionEmpleados) {
         this.fechaCreacionEmpleados = fechaCreacionEmpleados;
-    }
-
-    public Date getFechaActualizacionEmpleados() {
-        return fechaActualizacionEmpleados;
-    }
-
-    public void setFechaActualizacionEmpleados(Date fechaActualizacionEmpleados) {
-        this.fechaActualizacionEmpleados = fechaActualizacionEmpleados;
     }
 }

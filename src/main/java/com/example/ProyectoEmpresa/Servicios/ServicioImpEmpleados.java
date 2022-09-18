@@ -28,8 +28,8 @@ public class ServicioImpEmpleados implements ServicioEmpleados {
     }
 
     @Override
-    public Empleados consultarEmpleadosPorID(Long idEmpleados) {
-        return repositorioEmpleado.findById(idEmpleados).get();
+    public Empleados consultarEmpleadosPorID(Long docEmpleados) {
+        return repositorioEmpleado.findById(docEmpleados).get();
     }
 
     @Override
@@ -38,13 +38,13 @@ public class ServicioImpEmpleados implements ServicioEmpleados {
     }
 
     @Override
-    public void eliminarEmpleadosPorId(Long idEmpleados) {
-        repositorioEmpleado.deleteById(idEmpleados);
+    public void eliminarEmpleadosPorId(Long docEmpleados) {
+        repositorioEmpleado.deleteById(docEmpleados);
 
     }
     @Override
-    public Empleados actualizarPorId(Long idEmplea, Map<Object, Object> objectMap) {
-        Empleados emple=repositorioEmpleado.findById(idEmplea).get();
+    public Empleados actualizarPorId(Long docEmplea, Map<Object, Object> objectMap) {
+        Empleados emple=repositorioEmpleado.findById(docEmplea).get();
         objectMap.forEach((key, value)->{
             Field field= ReflectionUtils.findField(Empleados.class,(String) key);
             field.setAccessible(true);

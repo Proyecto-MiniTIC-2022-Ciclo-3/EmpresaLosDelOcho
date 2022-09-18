@@ -1,6 +1,7 @@
 package com.example.ProyectoEmpresa.Entidades;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -28,19 +29,15 @@ public class Transacciones {
     private Empresas empresas;
 
     @Column(name = "fecha_creacion_transaccion", nullable = false)
-    private Date fechaCreacionTransaccion;
+    private LocalDate fechaCreacionTransaccion;
 
-    @Column(name = "fecha_actualizacion_transaccion", nullable = false)
-    private Date fechaActualizacionTransaccion;
-
-    public Transacciones(long idTransaccion, String coneptoTransaccion, float montoTransaccion, Empleados empleados, Empresas empresas, Date fechaCreacionTransaccion, Date fechaActualizacionTransaccion) {
+    public Transacciones(long idTransaccion, String coneptoTransaccion, float montoTransaccion, Empleados empleados, Empresas empresas, LocalDate fechaCreacionTransaccion) {
         this.idTransaccion = idTransaccion;
         this.coneptoTransaccion = coneptoTransaccion;
         this.montoTransaccion = montoTransaccion;
         this.empleados = empleados;
         this.empresas = empresas;
         this.fechaCreacionTransaccion = fechaCreacionTransaccion;
-        this.fechaActualizacionTransaccion = fechaActualizacionTransaccion;
     }
 
     public Transacciones() {
@@ -86,19 +83,11 @@ public class Transacciones {
         this.empresas = empresas;
     }
 
-    public Date getFechaCreacionTransaccion() {
+    public LocalDate getFechaCreacionTransaccion() {
         return fechaCreacionTransaccion;
     }
 
-    public void setFechaCreacionTransaccion(Date fechaCreacionTransaccion) {
+    public void setFechaCreacionTransaccion(LocalDate fechaCreacionTransaccion) {
         this.fechaCreacionTransaccion = fechaCreacionTransaccion;
-    }
-
-    public Date getFechaActualizacionTransaccion() {
-        return fechaActualizacionTransaccion;
-    }
-
-    public void setFechaActualizacionTransaccion(Date fechaActualizacionTransaccion) {
-        this.fechaActualizacionTransaccion = fechaActualizacionTransaccion;
     }
 }
