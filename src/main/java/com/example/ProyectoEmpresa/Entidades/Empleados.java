@@ -5,6 +5,10 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
 
+enum TipoRol{
+    administrador,operativo
+}
+
 @Entity
 @Table(name = "Empleados")
 public class Empleados {
@@ -22,6 +26,9 @@ public class Empleados {
     @Column(name = "correo_empleado", nullable = false, unique = true)
     private String correo;
 
+    @Column(name = "tipo_rol", nullable = false)
+    private TipoRol rol;
+
     //@Column(name = "empresas_empleados", nullable = false)
     @ManyToOne
     @JoinColumn(name="nit_empresa")
@@ -31,11 +38,12 @@ public class Empleados {
     private LocalDate fechaCreacionEmpleados;
 
 
-    public Empleados(long documento, String nombres, String apellidos, String correo, Empresas empresasEmpleados, LocalDate fechaCreacionEmpleados) {
+    public Empleados(long documento, String nombres, String apellidos, String correo, TipoRol rol, Empresas empresasEmpleados, LocalDate fechaCreacionEmpleados) {
         this.documento = documento;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.correo = correo;
+        this.rol = rol;
         this.empresasEmpleados = empresasEmpleados;
         this.fechaCreacionEmpleados = fechaCreacionEmpleados;
     }
@@ -89,5 +97,13 @@ public class Empleados {
 
     public void setFechaCreacionEmpleados(LocalDate fechaCreacionEmpleados) {
         this.fechaCreacionEmpleados = fechaCreacionEmpleados;
+    }
+
+    public TipoRol getRol() {
+        return rol;
+    }
+
+    public void setRol(TipoRol rol) {
+        this.rol = rol;
     }
 }
