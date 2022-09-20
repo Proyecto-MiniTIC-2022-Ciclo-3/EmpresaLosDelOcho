@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Css/reset.css">
-    <link rel="stylesheet" href="Css/regempresa.css">
+    <link rel="stylesheet" th:href="@{/Css/reset.css}">
+    <link rel="stylesheet" th:href="@{/Css/regempresa.css}">
     <title>Document</title>
 </head>
 <body>
@@ -14,9 +14,9 @@
         <div class="logo">
             <nav class="menu">
                 <ul>
-                    <li><a href="#">Empresas</a></li>
-                    <li><a href="#">Empleados</a></li>
-                    <li><a href="#">Ingresos y Egresos</a></li>
+                    <li><a th:href="@{empresa}">Empresas</a></li>
+                    <li><a th:href="@{empleado}">Empleados</a></li>
+                    <li><a th:href="@{movimientos}">Ingresos y Egresos</a></li>
                 </ul>   
             </nav> 
         </div>
@@ -27,29 +27,31 @@
 
     <fieldset class="fi">
         <legend>Registrar Empresa</legend>
-        <form action=""method="" class="frm">
+        <form class="frm" th:action="@{/empresaguardar}" th:object="${empresainsertar}" method="POST" >
 
             <label for="doc">Nit empresa
-                <input type="text" id="doc" required>
+                <input type="text" id="doc" required th:field="*{nitEmpresa}">
             </label>
 
             <label for="n">Nombre
-                <input type="text" id="n">
+                <input type="text" id="n" th:field="*{nombreEmpresa}">
             </label>
 
             <label for="a">Direccion
-                <input type="text" id="a">
+                <input type="text" id="a" th:field="*{telefonoEmpresa}">
             </label>
 
             <label for="e">Telefono
-                <input type="text" id="e">
+                <input type="text" id="e" th:field="*{direccionEmpresa}">
             </label>
 
             <label for="c">Fecha de registro
-                <input type="date" id="c">
+                <input type="date" id="c" th:field="*{fechaCreacion}">
             </label>
 
             <input class="boton" type="submit" value="Registrar">
 
+        </form>
+    </fieldset>
 </body>
 </html>
