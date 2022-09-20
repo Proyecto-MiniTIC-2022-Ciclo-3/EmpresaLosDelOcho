@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Css/reset.css">
-    <link rel="stylesheet" href="Css/movimientos.css">
+    <link rel="stylesheet" th:href="@{Css/reset.css}">
+    <link rel="stylesheet" th:href="@{Css/movimientos.css}">
     <title>Document</title>
 </head>
 <body>
@@ -14,9 +14,9 @@
         <div class="logo">
             <nav class="menu">
                 <ul>
-                    <li><a href="#">Empresas</a></li>
-                    <li><a href="#">Empleados</a></li>
-                    <li><a href="#">Ingresos y Egresos</a></li>
+                    <li><a th:href="@{empresa}">Empresas</a></li>
+                    <li><a th:href="@{empleado}">Empleados</a></li>
+                    <li><a th:href="@{movimientos}">Ingresos y Egresos</a></li>
                 </ul>   
             </nav> 
         </div>

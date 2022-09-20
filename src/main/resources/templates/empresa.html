@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Css/reset.css">
-    <link rel="stylesheet" href="/Css/empresa.css">
+    <link rel="stylesheet" th:href="@{Css/reset.css}">
+    <link rel="stylesheet" th:href="@{/Css/empresa.css}">
     <title>Document</title>
 </head>
 <body>
@@ -14,9 +14,9 @@
         <div class="logo">
             <nav class="menu">
                 <ul>
-                    <li><a href="#">Empresas</a></li>
-                    <li><a href="#">Empleados</a></li>
-                    <li><a href="#">Ingresos y Egresos</a></li>
+                    <li><a th:href="@{empresa}">Empresas</a></li>
+                    <li><a th:href="@{empleado}">Empleados</a></li>
+                    <li><a th:href="@{movimientos}">Ingresos y Egresos</a></li>
                 </ul>   
             </nav> 
         </div>
@@ -35,19 +35,13 @@
                     </tr>
                     </thead>
                 
-                <tr>
-                    <td>100</td>
-                    <td>Universidad de los andes</td>
-                    <td>3107794519</td>
-                    <td>Calle 48 C sur # 12 F 10 </td>
-                    <td>12-06-2022</td>
-                </tr>
-                <tr>
-                    <td>200</td>
-                    <td>Lucas</td>
-                    <td>Bernal</td>
-                    <td>lucas@gmail.com</td>
-                    <td>123456</td>
+                <tr  th:each="i:${empresa}">
+
+                    <td th:text="${i.nitEmpresa}"></td>
+                    <td th:text="${i.nombreEmpresa}"></td>
+                    <td th:text="${i.telefonoEmpresa}"></td>
+                    <td th:text="${i.direccionEmpresa}"></td>
+                    <td th:text="${i.fechaCreacion}"></td>
                 </tr>
             </table>
 
