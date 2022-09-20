@@ -36,21 +36,13 @@
                     </tr>
                     </thead>
                 
-                <tr>
-                    <td>100</td>
-                    <td>Pago Nomina</td>
-                    <td>100000000</td>
-                    <td>3107794519</td>
-                    <td>3107794519</td>
-                    <td>12-06-2022</td>
-                </tr>
-                <tr>
-                    <td>200</td>
-                    <td>Lucas</td>
-                    <td>Bernal</td>
-                    <td>3107794519</td>
-                    <td>3107794519</td>
-                    <td>123456</td>
+                <tr th:each="i:${movimientos}">
+                    <td th:text="${i.idTransaccion}"></td>
+                    <td th:text="${i.coneptoTransaccion}"></td>
+                    <td th:text="${i.montoTransaccion}"></td>
+                    <td></td>
+                    <td></td>
+                    <td th:text="${i.fechaCreacionTransaccion}"></td>
                 </tr>
             </table>
 
