@@ -79,7 +79,7 @@ table{
     background-color: white;
     text-align: left;
     margin-left: 330px;
-    margin-top: 80px;
+    margin-top: 40px;
     width: 70%;
     border-collapse: collapse;
 }
@@ -112,8 +112,8 @@ tr:hover td{
     display: block;
     width: 140px;
     height: 40px;
-    margin-left: 1100px;
-    margin-top: -350px;
+    margin-left: 1150px;
+    margin-top: -310px;
     border: 0;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
