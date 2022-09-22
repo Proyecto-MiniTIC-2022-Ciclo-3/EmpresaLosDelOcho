@@ -24,13 +24,13 @@ public class ControladorEmpresaFrom {
         return ("empresa");
     }
 
-    @GetMapping("empresanueva")
+    @GetMapping("empresa/nueva")
     public String formularioregistro(Model modelo){
         modelo.addAttribute("empresainsertar",new Empresas());
         return "regempresa";
     }
 
-    @PostMapping("empresaguardar")
+    @PostMapping("empresa/guardar")
     public String insertar(Empresas empresa){
         sie.guardarEmpresas(empresa);
         return "redirect:/empresa";

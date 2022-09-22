@@ -30,7 +30,7 @@
                     <tr>
                         <th>ID transaccion</th>
                         <th>Concepto</th>
-                        <th>Monto</th>
+                        <th>Monto de dinero</th>
                         <th>Doc empleado</th>
                         <th>Nit empresa</th>
                         <th>Fecha de registro</th>
@@ -46,8 +46,8 @@
                     <td th:text="${i.empleados.documento}"></td>
                     <td th:text="${i.empresas.nitEmpresa}"></td>
                     <td th:text="${i.fechaCreacionTransaccion}"></td>
-                    <td><a class="act" th:href="@{'movimientosactualizar'+'/'+${i.idTransaccion}}">Consultar</a></td>
-                    <td><a class="act" th:href="@{'movimientoseliminar'+'/'+${i.idTransaccion}}">Eliminar</a></td>
+                    <td><a class="act" th:href="@{'movimientosactualizar'+'/'+${i.idTransaccion}}">📄🖊</a></td>
+                    <td><a class="act" th:href="@{'movimientoseliminar'+'/'+${i.idTransaccion}}">❌</a></td>
                 </tr>
             </table>
 

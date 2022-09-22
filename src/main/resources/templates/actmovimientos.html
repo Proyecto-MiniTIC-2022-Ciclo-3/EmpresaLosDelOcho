@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/Css/reset.css}">
-    <link rel="stylesheet" th:href="@{/Css/regmovimientos.css}">
+    <link rel="stylesheet" th:href="@{/Css/actmovimientos.css}">
     <title>Document</title>
 </head>
 <body>
@@ -25,7 +25,7 @@
     <h1 class="ti1"><strong> Sistema de gestion de ingresos y egresos</strong></h1>
     <h2 class="ti2"> <strong> Ingresos y Egresos</strong></h2>
 
-    <fieldset class="fi">
+    <fieldset class="fie">
         <legend>Actualizar Movimiento</legend>
         <form class="frm" th:action="@{/movimientosactualizar}" th:object="${movimientoactualizar}" method="POST" >
 
@@ -37,7 +37,7 @@
                 <input type="text" id="doc" required th:field="*{coneptoTransaccion}">
             </label>
 
-            <label for="n">Monto
+            <label for="n">Monto de dinero
                 <input type="text" id="n" th:field="*{montoTransaccion}">
             </label>
 
@@ -53,7 +53,7 @@
                 <input type="date" id="c" th:field="*{fechaCreacionTransaccion}">
             </label>
 
-            <input class="boton" type="submit" value="Registrar">
+            <input class="boton" type="submit" value="Guardar">
 
         </form>
     </fieldset>

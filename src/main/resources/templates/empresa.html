@@ -14,9 +14,9 @@
         <div class="logo">
             <nav class="menu">
                 <ul>
-                    <li><a th:href="@{empresa}">Empresas</a></li>
-                    <li><a th:href="@{empleado}">Empleados</a></li>
-                    <li><a th:href="@{movimientos}">Ingresos y Egresos</a></li>
+                    <li><a th:href="@{/empresa}">Empresas</a></li>
+                    <li><a th:href="@{/empleado}">Empleados</a></li>
+                    <li><a th:href="@{/movimientos}">Ingresos y Egresos</a></li>
                 </ul>   
             </nav> 
         </div>
@@ -24,7 +24,7 @@
     
     <h1 class="ti1"><strong> Sistema de gestion de empresas</strong></h1>
     <h2 class="ti2"> <strong> Empresas</strong></h2>
-    <a th:href="@{/empresanueva}"> <button class="boton">Nuevo Registro</button></a>
+    <a th:href="@{/empresa/nueva}"> <button class="boton">Nuevo Registro</button></a>
             <table>
                 <thead> 
                     <tr>
@@ -45,8 +45,8 @@
                     <td th:text="${i.telefonoEmpresa}"></td>
                     <td th:text="${i.direccionEmpresa}"></td>
                     <td th:text="${i.fechaCreacion}"></td>
-                    <td><a class="act" th:href="@{'empresasactualizar'+'/'+${i.nitEmpresa}}">Consultar</a></td>
-                    <td><a class="act" th:href="@{'empresaeliminar'+'/'+${i.nitEmpresa}}">Eliminar</a></td>
+                    <td><a class="act" th:href="@{'empresasactualizar'+'/'+${i.nitEmpresa}}">📄🖊</a></td>
+                    <td><a class="act" th:href="@{'empresaeliminar'+'/'+${i.nitEmpresa}}">❌</a></td>
                 </tr>
 
             </table>

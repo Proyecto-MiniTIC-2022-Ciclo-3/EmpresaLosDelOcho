@@ -1,7 +1,7 @@
 .contheader{
 
     background-color: #07395fc4;
-    height: 650px;
+    height: 680px;
     width: 300px;
     display: flex;
 }
@@ -55,7 +55,7 @@ li{
     color: black;
     display: block;
     height: 40px;
-    margin-top: -620px;
+    margin-top: -660px;
     margin-left: 300px;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -67,65 +67,84 @@ li{
 .ti2{
     background-color: 0;
     display: flex;
-    width: 10%;
+    width: 15%;
     margin-left: 350px;
+    margin-top: -30px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 20px; 
     padding: 10px 10px;
-}
-
-
-table{
-    background-color: white;
-    text-align: center;
-    margin-left: 315px;
-    margin-top: 20px;
-    width: 76%;
-    border-collapse: collapse;
 
 }
 
-th{ 
-    padding: 15px;
-}
-
-td{  
-    padding: 15px;
-
-}
-
-thead{
+.fie{
     background-color: #07395fc4;
-    border-bottom: solid 5px #0f362d;
+    width: 50%;
+    height: 550px;
+    margin-top: -20px;
+    margin-left: 450px;
+    border: 0;
+    padding: 20px;
+
+}
+
+
+label{
     color: black;
+    font-size: 18px;
+   
 }
 
-tr:nth-child(even){
-    background-color: #ddd;
+
+[type="text"]{
+    display: block;
+    width: 100%;
+    height: 30px;
+    border: 0;
+    background: rgba(255,255,255,0.4);
+    margin-bottom: 20px;
 }
 
-tr:hover td{
-    background-color: #369681;
-    color: white;
+[type="date"]{
+    display: block;
+    width: 100%;
+    height: 35px;
+    border: 0;
+    background: rgba(255,255,255,0.4);
+    margin-bottom: 20px;
+}
+
+
+.ec{
+    display: block;
+}
+
+.frm{
+    background-color: 0;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+legend{
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 50px;
+    
 }
 
 .boton{
-    background-color: #07395fc4;
+
+    background-color: gray;
     display: block;
     width: 140px;
     height: 40px;
-    margin-left: 1150px;
-    margin-top: -30px;
+    margin-left: auto;
     border: 0;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-bottom: 30px;
     border-radius: 10px;
     border-bottom: solid 5px #0f362d;
-}
-
-.act{
-   text-decoration: none;
-   color: black;
 
 }
