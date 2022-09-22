@@ -24,6 +24,7 @@
     
     <h1 class="ti1"><strong> Sistema de gestion de empresas</strong></h1>
     <h2 class="ti2"> <strong> Empresas</strong></h2>
+    <a th:href="@{/empresanueva}"> <button class="boton">Nuevo Registro</button></a>
             <table>
                 <thead> 
                     <tr>
@@ -32,6 +33,8 @@
                         <th>Telefono</th>
                         <th>Direccion</th>
                         <th>Fecha de registro</th>
+                        <th>Modificar datos</th>
+                        <th>¿Eliminar datos?</th>
                     </tr>
                     </thead>
                 
@@ -42,9 +45,12 @@
                     <td th:text="${i.telefonoEmpresa}"></td>
                     <td th:text="${i.direccionEmpresa}"></td>
                     <td th:text="${i.fechaCreacion}"></td>
+                    <td><a class="act" th:href="@{'empresasactualizar'+'/'+${i.nitEmpresa}}">Consultar</a></td>
+                    <td><a class="act" th:href="@{'empresaeliminar'+'/'+${i.nitEmpresa}}">Eliminar</a></td>
                 </tr>
+
             </table>
 
-          <a th:href="@{/empresanueva}"> <button class="boton">Nuevo Registro</button></a>
+
 </body>
 </html>

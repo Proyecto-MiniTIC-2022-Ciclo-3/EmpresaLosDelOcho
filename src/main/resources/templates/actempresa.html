@@ -14,9 +14,9 @@
         <div class="logo">
             <nav class="menu">
                 <ul>
-                    <li><a th:href="@{empresa}">Empresas</a></li>
-                    <li><a th:href="@{empleado}">Empleados</a></li>
-                    <li><a th:href="@{movimientos}">Ingresos y Egresos</a></li>
+                    <li><a th:href="@{/empresa}">Empresas</a></li>
+                    <li><a th:href="@{/empleado}">Empleados</a></li>
+                    <li><a th:href="@{/movimientos}">Ingresos y Egresos</a></li>
                 </ul>   
             </nav> 
         </div>
@@ -26,8 +26,8 @@
     <h2 class="ti2"> <strong> Empresas</strong></h2>
 
     <fieldset class="fi">
-        <legend>Registrar Empresa</legend>
-        <form class="frm" th:action="@{/empresaguardar}" th:object="${empresainsertar}" method="POST" >
+        <legend>Actualizar Empresa</legend>
+        <form class="frm" th:action="@{/empresasactualizar}" th:object="${empresaactualizar}" method="POST" >
 
             <label for="doc">Nit empresa
                 <input type="text" id="doc" required th:field="*{nitEmpresa}">

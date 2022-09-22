@@ -24,6 +24,7 @@
     
     <h1 class="ti1"><strong> Sistema de gestion de ingeresos y egresos</strong></h1>
     <h2 class="ti2"> <strong> Ingresos y Egresos</strong></h2>
+    <a th:href="@{/movimientonuevo}"> <button class="boton">Nuevo Registro</button></a>
             <table>
                 <thead> 
                     <tr>
@@ -33,6 +34,8 @@
                         <th>Doc empleado</th>
                         <th>Nit empresa</th>
                         <th>Fecha de registro</th>
+                        <th>Modificar datos</th>
+                        <th>¿Eliminar datos?</th>
                     </tr>
                     </thead>
                 
@@ -43,10 +46,10 @@
                     <td th:text="${i.empleados.documento}"></td>
                     <td th:text="${i.empresas.nitEmpresa}"></td>
                     <td th:text="${i.fechaCreacionTransaccion}"></td>
+                    <td><a class="act" th:href="@{'movimientosactualizar'+'/'+${i.idTransaccion}}">Consultar</a></td>
+                    <td><a class="act" th:href="@{'movimientoseliminar'+'/'+${i.idTransaccion}}">Eliminar</a></td>
                 </tr>
             </table>
-
-    <a th:href="@{/movimientonuevo}"> <button class="boton">Nuevo Registro</button></a>
 
 </body>
 </html>

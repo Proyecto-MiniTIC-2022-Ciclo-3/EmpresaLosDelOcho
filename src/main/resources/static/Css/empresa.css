@@ -78,9 +78,9 @@ li{
 table{
     background-color: white;
     text-align: left;
-    margin-left: 330px;
-    margin-top: 40px;
-    width: 70%;
+    margin-left: 315px;
+    margin-top: 20px;
+    width: 75%;
     border-collapse: collapse;
 }
 
@@ -113,11 +113,16 @@ tr:hover td{
     width: 140px;
     height: 40px;
     margin-left: 1150px;
-    margin-top: -310px;
+    margin-top: -30px;
     border: 0;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-bottom: 30px;
     border-radius: 10px;
     border-bottom: solid 5px #0f362d;
+}
+
+.act{
+   text-decoration: underline;
+   color: black;
 }

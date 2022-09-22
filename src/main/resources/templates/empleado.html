@@ -24,6 +24,7 @@
     
     <h1 class="ti1"><strong> Sistema de gestion de empleados</strong></h1>
     <h2 class="ti2"> <strong> Empleados</strong></h2>
+    <a th:href="@{/empleadonuevo}"> <button class="boton">Nuevo Registro</button></a>
             <table>
                 <thead> 
                     <tr>
@@ -34,6 +35,8 @@
                         <th>Rol</th>
                         <th>Nit empresa</th>
                         <th>Fecha de registro</th>
+                        <th>Modificar datos</th>
+                        <th>¿Eliminar datos?</th>
                     </tr>
                     </thead>
                 
@@ -45,10 +48,12 @@
                     <td th:text="${i.rol}"></td>
                     <td th:text="${i.empresasEmpleados.nitEmpresa}"></td>
                     <td th:text="${i.fechaCreacionEmpleados}"></td>
+                    <td><a class="act" th:href="@{'empleadosactualizar'+'/'+${i.documento}}">Consultar</a></td>
+                    <td><a class="act" th:href="@{'empleadoseliminar'+'/'+${i.documento}}">Eliminar</a></td>
                 </tr>
 
             </table>
-    <a th:href="@{/empleadonuevo}"> <button class="boton">Nuevo Registro</button></a>
+
 
 </body>
 </html>

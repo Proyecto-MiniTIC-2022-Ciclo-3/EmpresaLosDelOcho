@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/Css/reset.css}">
+    <link rel="stylesheet" th:href="@{/Css/regempleados.css}">
+    <title>Document</title>
+</head>
+<body>
+
+    <header  class="contheader" id="contenca">
+        <div class="logo">
+            <nav class="menu">
+                <ul>
+                    <li><a th:href="@{/empresa}">Empresas</a></li>
+                    <li><a th:href="@{/empleado}">Empleados</a></li>
+                    <li><a th:href="@{/movimientos}">Ingresos y Egresos</a></li>
+                </ul>   
+            </nav> 
+        </div>
+    </header>
+    
+    <h1 class="ti1"><strong> Sistema de gestion de empleados</strong></h1>
+    <h2 class="ti2"> <strong> Empleados</strong></h2>
+
+    <fieldset class="fi">
+        <legend>Actualizar datos del Empleado</legend>
+        <form class="frm" th:action="@{/empleadosactualizar}" th:object="${empleadoactualizar}" method="POST" >
+
+            <label for="doc">Documento
+                <input type="text" id="doc" required th:field="*{documento}">
+            </label>
+
+            <label for="n">Nombres
+                <input type="text" id="n" th:field="*{nombres}">
+            </label>
+
+            <label for="a">Aplellidos
+                <input type="text" id="a" th:field="*{apellidos}">
+            </label>
+
+            <label for="e">Correo
+                <input type="text" id="e" th:field="*{correo}">
+            </label>
+
+            <label for="r">Rol
+                <input type="text" id="r" th:field="*{rol}">
+            </label>
+
+            <label for="ni">Nit de la empresa
+                <input type="text" id="ni" th:field="*{empresasEmpleados}">
+            </label>
+
+            <label for="f">Fecha de registro
+                <input type="date" id="f" th:field="*{fechaCreacionEmpleados}">
+            </label>
+
+            <input class="boton" type="submit" value="Registrar">
+
+        </form>
+    </fieldset>
+</body>
+</html>
+
+

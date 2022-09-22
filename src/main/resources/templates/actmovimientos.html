@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/Css/reset.css}">
+    <link rel="stylesheet" th:href="@{/Css/regmovimientos.css}">
+    <title>Document</title>
+</head>
+<body>
+
+    <header  class="contheader" id="contenca">
+        <div class="logo">
+            <nav class="menu">
+                <ul>
+                    <li><a th:href="@{/empresa}">Empresas</a></li>
+                    <li><a th:href="@{/empleado}">Empleados</a></li>
+                    <li><a th:href="@{/movimientos}">Ingresos y Egresos</a></li>
+                </ul>   
+            </nav> 
+        </div>
+    </header>
+    
+    <h1 class="ti1"><strong> Sistema de gestion de ingresos y egresos</strong></h1>
+    <h2 class="ti2"> <strong> Ingresos y Egresos</strong></h2>
+
+    <fieldset class="fi">
+        <legend>Actualizar Movimiento</legend>
+        <form class="frm" th:action="@{/movimientosactualizar}" th:object="${movimientoactualizar}" method="POST" >
+
+            <label for="doc">ID Movimiento
+                <input type="text" id="id" required th:field="*{idTransaccion}">
+            </label>
+
+            <label for="doc">Concepto
+                <input type="text" id="doc" required th:field="*{coneptoTransaccion}">
+            </label>
+
+            <label for="n">Monto
+                <input type="text" id="n" th:field="*{montoTransaccion}">
+            </label>
+
+            <label for="a">Doc empleado
+                <input type="text" id="a" th:field="*{empleados}">
+            </label>
+
+            <label for="e">Nit empresa
+                <input type="text" id="e" th:field="*{empresas}">
+            </label>
+
+            <label for="c">Fecha de registro
+                <input type="date" id="c" th:field="*{fechaCreacionTransaccion}">
+            </label>
+
+            <input class="boton" type="submit" value="Registrar">
+
+        </form>
+    </fieldset>
+</body>
+</html>
