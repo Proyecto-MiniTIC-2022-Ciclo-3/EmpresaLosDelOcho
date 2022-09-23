@@ -1,40 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{Css/reset.css}">
-    <link rel="stylesheet" th:href="@{/Css/stylessindex.css}">
+    <link rel="stylesheet" th:href="@{Css/stylessindex.css}">
     <title>Document</title>
 </head>
-<body>
+<body>     
+        <div class="logo"></div>
 
-    <header  class="contheader" id="contenca">
-        <div class="logo">
-            <nav class="menu">
-                <ul>
-                    <li><a th:href="@{empresa}">Empresas</a></li>
-                    <li><a th:href="@{empleado}">Empleado</a></li>
-                    <li><a th:href="@{movimientos}">Ingresos y Egresos</a></li>
-                </ul>   
-            </nav> 
+        <div sec:authorize="!isAuthenticated()">
+            <a class="boton" th:href="@{/oauth2/authorization/auth0}"> Inicio de sesion </a>
         </div>
-    </header>
 
-    <main class="main">
-        <section class="secuno">
-            <div class="buscar"> 
-                <nav class="menu2">
-                    <ul>
-                        <li class="navegar"><a class="letra" th:href="@{empresa}">Sistema de gestión de empresas </a></li>
-                        <li class="navegar"><a class="letra" th:href="@{empleado}">Sistema de gestión de empleados</a></li>
-                        <li class="navegar"><a class="letra" th:href="@{movimientos}">Sistema de gestión de ingresos y egresos</a></li>
-                    </ul>   
-                </nav> 
-            </div>   
-        </section>
-    </main>
-    
+        <div sec:authorize="isAuthenticated()">
+            <a class="boton" th:href="@{/inicio}"> Ingrese al sistema </a>
+        </div>
+
 </body>
 </html>
