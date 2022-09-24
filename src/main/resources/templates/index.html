@@ -9,10 +9,17 @@
     <title>Document</title>
 </head>
 <body>     
-        <div class="logo"></div>
+
+        <div>
+            <i><h1 class="h1">Sistema de gestión para empresas</h1></i>
+        </div>
+
+        <div class="logo">
+            <h1 class="h2">Bienvenido al sistema de gestión de empresas</h1>
+        </div>
 
         <div sec:authorize="!isAuthenticated()">
-            <a class="boton" th:href="@{/oauth2/authorization/auth0}"> Inicio de sesion </a>
+            <a class="boton" th:href="@{/oauth2/authorization/auth0}"> Inicio de sesión </a>
         </div>
 
         <div sec:authorize="isAuthenticated()">
