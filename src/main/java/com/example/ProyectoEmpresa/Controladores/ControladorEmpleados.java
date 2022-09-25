@@ -55,4 +55,5 @@ public class ControladorEmpleados {
     public Empleados actualizarporId(@PathVariable("id") Long id, @RequestBody Map<Object,Object> objectMap){
         return sie.actualizarPorId(id,objectMap);
     }
+
 }

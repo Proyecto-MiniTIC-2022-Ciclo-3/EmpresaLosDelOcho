@@ -2,7 +2,9 @@ package com.example.ProyectoEmpresa.ControladorFrom;
 
 import com.example.ProyectoEmpresa.Entidades.Empleados;
 import com.example.ProyectoEmpresa.Entidades.Empresas;
+import com.example.ProyectoEmpresa.Entidades.Usuario;
 import com.example.ProyectoEmpresa.Servicios.ServicioImpEmpleados;
+import com.example.ProyectoEmpresa.Servicios.ServicioUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
@@ -18,8 +20,20 @@ public class ControladorEmpleadoFrom {
     @Autowired
     private ServicioImpEmpleados siem;
 
+    @Autowired
+    private ServicioUsuario su;
+
+    public ControladorEmpleadoFrom(ServicioUsuario serviciousuario) {
+        this.su= serviciousuario;
+    }
+
     @GetMapping("/")
     public String inicio(Model model, @AuthenticationPrincipal OidcUser principal) {
+        if(principal!=null) {
+            Usuario usuario=this.su.obtenerUsuario(principal.getClaims());
+            System.out.println(principal.getClaims());
+            model.addAttribute("usuario",usuario);
+        }
         return "index";
     }
 
